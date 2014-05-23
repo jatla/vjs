@@ -1,0 +1,25 @@
+<h1>Listing admins_news</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admins_news.each do |admins_news| %>
+      <tr>
+        <td><%= link_to 'Show', admins_news %></td>
+        <td><%= link_to 'Edit', edit_admins_news_path(admins_news) %></td>
+        <td><%= link_to 'Destroy', admins_news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New News', new_admins_news_path %>
