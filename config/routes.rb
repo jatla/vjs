@@ -1,18 +1,22 @@
 Vjs::Application.routes.draw do
   
+  namespace :admins do
+    resources :messages
+    resources :pages
+    resources :news
+  end
+
   root 'static_pages#home'
 
   get "static_pages/home", as: 'home'
   get "static_pages/academics", as: 'academics'
   get "static_pages/contact_us", as: 'contact_us'
+  get "static_pages/about_us", as: 'about_us'
   get "static_pages/news", as: 'news'
+  get "static_pages/website_manager", as: 'website_manager'
 
   devise_for :users
   devise_for :admins
-
-  namespace :admins do
-    resources :news
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

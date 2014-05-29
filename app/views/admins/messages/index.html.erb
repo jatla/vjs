@@ -1,0 +1,25 @@
+<h1>Listing admins_messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admins_messages.each do |admins_message| %>
+      <tr>
+        <td><%= link_to 'Show', admins_message %></td>
+        <td><%= link_to 'Edit', edit_admins_message_path(admins_message) %></td>
+        <td><%= link_to 'Destroy', admins_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_admins_message_path %>
