@@ -1,3 +1,9 @@
 == README
 
-This is to be used as an introductory website for schools. 
+VJS is a web application that provides a framework to create the following pages easily for any school:
+	1. Introduction, Vision/Goals (HOME page)
+	2. Academic Information (Academics page)
+	3. Activity Information (Events page)
+	4. Detailed information about school (About Us page)
+	5. Contact information, Send Message (Contact Us page)
+	6. Admin Portal (Website Manager page)
