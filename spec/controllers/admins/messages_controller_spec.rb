@@ -23,7 +23,8 @@ describe Admins::MessagesController do
   # This should return the minimal set of attributes required to create a valid
   # Admins::Message. As you add validations to Admins::Message, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { {  } }
+  let(:valid_attributes) { { subject: "RSPEC TEST SUBJECT",
+                             message: "RSPEC TEST MESSAGE" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -106,8 +107,8 @@ describe Admins::MessagesController do
         # specifies that the Admins::Message created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Admins::Message.any_instance.should_receive(:update).with({ "these" => "params" })
-        put :update, {:id => message.to_param, :admins_message => { "these" => "params" }}, valid_session
+        Admins::Message.any_instance.should_receive(:update).with({ "subject" => "RSPEC TEST SUBJECT", "message" => "RSPEC TEST MESSAGE" })
+        put :update, {:id => message.to_param, :admins_message => { "subject" => "RSPEC TEST SUBJECT", "message" => "RSPEC TEST MESSAGE" }}, valid_session
       end
 
       it "assigns the requested admins_message as @admins_message" do

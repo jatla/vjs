@@ -25,7 +25,7 @@ class Admins::MessagesController < ApplicationController
   # POST /admins/messages.json
   def create
     @admins_message = Admins::Message.new(admins_message_params)
-    @admins_message.user_id = current_user.id
+    @admins_message.user_id = current_user.id if user_signed_in?
     respond_to do |format|
       if @admins_message.save
         if user_signed_in?

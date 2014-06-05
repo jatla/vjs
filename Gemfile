@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'
 
 group :test, :development do
-	gem 'rspec-rails'
-	gem 'capybara'
+	gem 'factory_girl_rails'
+    gem 'rspec-rails'
+    gem 'capybara'
 	gem 'sqlite3'
 end
 

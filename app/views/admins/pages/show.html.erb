@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @admins_page.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @admins_page.content %>
+</p>
+
 <%= link_to 'Edit', edit_admins_page_path(@admins_page) %> |
 <%= link_to 'Back', admins_pages_path %>

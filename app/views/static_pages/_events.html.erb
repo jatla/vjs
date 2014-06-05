@@ -1,0 +1,11 @@
+<% if !locals[:event_list].nil? %>
+	<% locals[:event_list].each do |event| %>
+		<p>
+		  <div calss="container">
+		    <strong><%= event.headline %></strong>
+		    <p>Date: <%= event.date %></p>
+		    <p><%= event.description %></p>
+		  </div>
+		</p>
+	<% end %>
+<% end %>

@@ -16,6 +16,8 @@ class StaticPagesController < ApplicationController
   end
 
   def news
+    @news = Admins::News.where('news_type LIKE ?', Admins::News::TYPE_EVENT)
+    @events = Admins::News.where('news_type LIKE ?', Admins::News::TYPE_NEWS)
   end
 
   def contact_us

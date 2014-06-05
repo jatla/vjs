@@ -69,6 +69,6 @@ class Admins::PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admins_page_params
-      params[:admins_page]
+      params.require(:admins_page).permit(:name, :content)
     end
 end

@@ -1,1 +1,9 @@
 <%= render 'content' %>
+<p>
+	<h4>Events:</h4>
+	<%= render 'events', :locals => {:event_list => @events} %>
+</p>
+<p>
+	<h4>News:</h4>
+	<%= render 'events', :locals => {:event_list => @news} %>
+</p>

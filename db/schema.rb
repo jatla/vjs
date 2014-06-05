@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529233611) do
+ActiveRecord::Schema.define(version: 20140605061842) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140529233611) do
     t.datetime "date"
     t.string   "headline"
     t.text     "description"
-    t.string   "type"
+    t.string   "news_type"
   end
 
   create_table "admins_pages", force: true do |t|

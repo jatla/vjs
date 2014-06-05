@@ -1,17 +1,22 @@
-<h1>Listing admins_news</h1>
+<h1>News:</h1>
 
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Date</th>
+      <th>Headline</th>
+      <th>Description</th>
+      <th>News Type</th>
     </tr>
   </thead>
 
   <tbody>
     <% @admins_news.each do |admins_news| %>
       <tr>
+        <td><%= admins_news.date %></td>
+        <td><%= admins_news.headline %></td>
+        <td><%= admins_news.description %></td>
+        <td><%= admins_news.news_type %></td>
         <td><%= link_to 'Show', admins_news %></td>
         <td><%= link_to 'Edit', edit_admins_news_path(admins_news) %></td>
         <td><%= link_to 'Destroy', admins_news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
