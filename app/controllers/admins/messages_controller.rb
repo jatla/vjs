@@ -25,11 +25,15 @@ class Admins::MessagesController < ApplicationController
   # POST /admins/messages.json
   def create
     @admins_message = Admins::Message.new(admins_message_params)
-
+    @admins_message.user_id = current_user.id
     respond_to do |format|
       if @admins_message.save
-        format.html { redirect_to @admins_message, notice: 'Message was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @admins_message }
+        if user_signed_in?
+          format.html { redirect_to contact_us_path, notice: 'Message was successfully created.' }
+        else
+          format.html { redirect_to @admins_message, notice: 'Message was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @admins_message }
+        end
       else
         format.html { render action: 'new' }
         format.json { render json: @admins_message.errors, status: :unprocessable_entity }
@@ -69,6 +73,6 @@ class Admins::MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admins_message_params
-      params[:admins_message]
+      params.require(:admins_message).permit(:subject, :message, :user_id)
     end
 end

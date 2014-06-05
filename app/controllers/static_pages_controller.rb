@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_action :initialize_page
   before_action :authenticate_user!, only: :contact_us
   before_action :authenticate_admin!, only: :website_manager
 
@@ -18,10 +19,14 @@ class StaticPagesController < ApplicationController
   end
 
   def contact_us
-
+    @admins_message = Admins::Message.new
   end
 
   def website_manager
-    
+  end
+
+private
+  def initialize_page
+    @page = Admins::Page.where('name LIKE ?', action_name.capitalize)
   end
 end
