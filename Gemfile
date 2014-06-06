@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
-
+gem "figaro"
 group :test, :development do
 	gem 'factory_girl_rails'
     gem 'rspec-rails'
